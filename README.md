@@ -18,6 +18,8 @@
 ```console
     git clone https://github.com/alexander-dryannov/lazy_post-install.git
     cd lazy_post-install/
+    chmod +x install.sh
+    sudo ./install.sh
 ```
 
 ## Если все пошло не так
