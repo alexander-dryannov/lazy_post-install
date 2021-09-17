@@ -44,7 +44,7 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Выполняю установку зависимостей и программ${NORMAL}\n\n"
-sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev zsh feh sakura
+sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot dev>
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Создаю бэкап файла dwm.desktop${NORMAL}\n\n"
@@ -112,6 +112,7 @@ sudo rm $HOME_DIRECTORY/Downloads/*
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Установка oh-my-zsh${NORMAL}\n\n"
-cd $HOME_DIRECTORY
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O $HOME_DIRECTORY/install.sh
+cd $HOME_DIRECTORY && chmod +x install.sh && ./install.sh &
+sudo rm $HOME_DIRECTORY/install.sh
 printf "\n${GREEN}Исполнено!"
