@@ -93,7 +93,7 @@ printf "\n\n${YELLOW}Меняю разрешение экрана и ставл�
 mkdir -p $HOME_DIRECTORY/Pictures/Background
 wget https://wallpaper-house.com/data/out/7/wallpaper2you_171373.jpg -O $HOME_DIRECTORY/Pictures/Background/debian.jpg
 echo "
-xrandr -s 1920x180'
+xrandr -s 1920x1080
 feh --bg-scale $HOME_DIRECTORY/Pictures/Background/debian.jpg
 " >> $HOME_DIRECTORY/.xsessionrc
 printf "\n${GREEN}Исполнено!"
