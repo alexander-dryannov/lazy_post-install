@@ -44,7 +44,7 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Выполняю установку зависимостей и программ${NORMAL}\n\n"
-sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot dev>
+sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev zsh feh sakura
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Создаю бэкап файла dwm.desktop${NORMAL}\n\n"
