@@ -44,7 +44,7 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Выполняю установку зависимостей и программ${NORMAL}\n\n"
-sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev zsh feh sakura
+sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev libasound-dev feh sakura nginx tmux
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Создаю бэкап файла dwm.desktop${NORMAL}\n\n"
@@ -70,6 +70,7 @@ printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Меняю ALT на WIN${NORMAL}\n\n"
 sed -i "s/Mod1Mask/Mod4Mask/" config.def.h
+sed -i 's/{ "st", NULL }/{ "sakura", NULL }/' config.def.h
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Устанавливаю dwm из исходников${NORMAL}\n\n"
@@ -109,10 +110,4 @@ sudo apt -y install -f
 sudo apt -y install -f
 
 sudo rm $HOME_DIRECTORY/Downloads/*
-printf "\n${GREEN}Исполнено!"
-
-printf "\n\n${YELLOW}Установка oh-my-zsh${NORMAL}\n\n"
-wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O $HOME_DIRECTORY/install.sh
-cd $HOME_DIRECTORY && chmod +x install.sh && ./install.sh &
-sudo rm $HOME_DIRECTORY/install.sh
 printf "\n${GREEN}Исполнено!"
