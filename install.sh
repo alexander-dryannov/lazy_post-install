@@ -125,4 +125,4 @@ http://nginx.org/packages/debian `lsb_release -cs` nginx" \
 
 sudo apt update
 sudo apt -y install nginx
-printf "\n${GREEN}Исполнено!"
+printf "\n${GREEN}Исполнено!${NORMAL}\n\n"
