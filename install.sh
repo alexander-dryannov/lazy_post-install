@@ -44,7 +44,7 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Выполняю установку зависимостей и программ${NORMAL}\n\n"
-sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev libasound-dev feh sakura nginx tmux
+sudo apt update && sudo apt -y upgrade && sudo apt -y install firmware-linux firefox-esr sddm dwm suckless-tools xclip xorg xterm build-essential fakeroot devscripts micro libx11-dev libxft-dev libxinerama1 libxinerama-dev libasound-dev feh sakura tmux
 printf "\n${GREEN}Исполнено!"
 
 printf "\n\n${YELLOW}Создаю бэкап файла dwm.desktop${NORMAL}\n\n"
@@ -110,4 +110,19 @@ sudo apt -y install -f
 sudo apt -y install -f
 
 sudo rm $HOME_DIRECTORY/Downloads/*
+printf "\n${GREEN}Исполнено!"
+
+
+printf "\n\n${YELLOW}Установка nginx${NORMAL}\n\n"
+sudo apt -y install gnupg2 ca-certificates debian-archive-keyring
+
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+    | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+http://nginx.org/packages/debian `lsb_release -cs` nginx" \
+    | sudo tee /etc/apt/sources.list.d/nginx.list
+
+sudo apt update
+sudo apt -y install nginx
 printf "\n${GREEN}Исполнено!"
